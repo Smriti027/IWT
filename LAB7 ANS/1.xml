@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<UniversityEmployeeDatabase>
+    <Employee>
+        <EmployeeCode>EMP001</EmployeeCode>
+        <EmployeeName>John Doe</EmployeeName>
+        <Designation>Professor</Designation>
+        <Address>123 Main Street, City, Country</Address>
+        <Department>Computer Science</Department>
+        <PerformanceSummary>
+            <Month1>Excellent</Month1>
+            <Month2>Good</Month2>
+            <Month3>Excellent</Month3>
+            <Month4>Very Good</Month4>
+            <Month5>Outstanding</Month5>
+            <Month6>Good</Month6>
+            <Month7>Excellent</Month7>
+            <Month8>Very Good</Month8>
+            <Month9>Excellent</Month9>
+            <Month10>Outstanding</Month10>
+            <Month11>Good</Month11>
+            <Month12>Excellent</Month12>
+        </PerformanceSummary>
+    </Employee>
+    <!-- Add more Employee entries here if needed -->
+</UniversityEmployeeDatabase>

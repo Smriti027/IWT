@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required maxlength="20">
+            <span id="firstNameError" class="error"></span>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required maxlength="20">
+            <span id="lastNameError" class="error"></span>
+        </div>
+        <div>
+            <label for="mailingAddress">EMail:</label>
+            <input type="text" id="mailingAddress" name="mailingAddress" required>
+            <span id="mailingAddressError" class="error"></span>
+        </div>        
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" pattern="[0-9]*">
+            <span id="phoneError" class="error"></span>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">[choose yours]</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>                
+            </select>
+            <span id="countryError" class="error"></span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function validateForm() {
+            clearErrors();
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const mailingAddress = document.getElementById('mailingAddress').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const country = document.getElementById('country').value;
+            
+            let valid = true;
+            if (firstName === '') {
+                showError('firstNameError', 'First Name is required.');
+                valid = false;
+            } else if (firstName.length > 20) {
+                showError('firstNameError', 'First Name cannot exceed 20 characters.');
+                valid = false;
+            }
+            if (lastName === '') {
+                showError('lastNameError', 'Last Name is required.');
+                valid = false;
+            } else if (lastName.length > 20) {
+                showError('lastNameError', 'Last Name cannot exceed 20 characters.');
+                valid = false;
+            }
+            if (phone !== '' && !isValidPhoneNumber(phone)) {
+                showError('phoneError', 'Phone number should be numeric only.');
+                valid = false;
+            }
+            if (country === '') {
+                showError('countryError', 'Please select a country.');
+                valid = false;
+            }
+            if (mailingAddress === '' || !mailingAddress.includes('@') || !mailingAddress.includes('.')) {
+                showError('mailingAddressError', 'Mailing address must contain @ and dot (.) symbols.');
+                valid = false;
+            }
+            return valid;
+        }
+        function showError(id, message) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = message;
+        }
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error');
+            for (const errorElement of errorElements) {
+                errorElement.textContent = '';
+            }
+        }
+        function isValidPhoneNumber(phone) {
+            const phoneRegex = /^[0-9]+$/;
+            return phoneRegex.test(phone);
+        }
+    </script>
+</body>
+</html>

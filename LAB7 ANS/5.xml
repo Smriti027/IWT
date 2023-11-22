@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<people>
+  <person>
+    <name>Santosh</name>
+  </person>
+  <person>
+    <name>Santosh</name>
+    <address>Industrial, Berhampur</address>
+    <tel>(0680)2492422</tel>
+    <fax>(0680)2492627</fax>
+    <email>santosh@hotmail.com</email>
+  </person>
+  <person>
+    <name>nagaraju achary</name>
+    <address>kolkotta</address>
+    <tel>(033)6045953</tel>
+    <fax>(033)6047230</fax>
+    <email>nagagraj@rediffmail.com</email>
+  </person>
+  <person>
+    <name>NIST</name>
+    <address>Golanthara</address>
+    <tel>(0680)6045953</tel>
+    <fax>(0680)6047230</fax>
+    <email>nist@nist.edu</email>
+  </person>
+</people>

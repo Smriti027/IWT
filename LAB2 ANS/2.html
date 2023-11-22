@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <style>
+        div {text-align: center;};
+        </style>
+        <form action="/tacos/">
+        <div>
+        <h1 style="text-align:center;">Student Registration Form</h1>
+        <label for="roll">Roll number</label>
+        <input type="text" id="roll" name="roll" maxlength="9"> *Max 9 characters<br>
+        <label for="fname">full name:</label>
+        <input type="text" id="fname" name="fname" size="50"><br>
+        <label for="address">Address</label>
+        <textarea id="address" rows="3" cols="10" name="address"></textarea><br>
+        <label for="birthday">DOB</label>
+        <input type="date" id="birthday" name="birthday"><br>
+        <label for="cno">Contact no</label>
+        <select>
+            <option selected>+91</option>
+        </select>
+        <input type="Contact No." name="mob_digits"  maxlength="10"><br>
+        <label for="mail">Email id</label>
+        <input type="email" name="mail" placeholder="jsb120@nist.edu"><br>
+        <label for="pwd1">Password</label>
+        <input type="password" name="user_pass" maxlength="10"> *Max 10 characters<br>
+        <label for="pwd">Re-enter Password</label>
+        <input type="password" name="user_pass" maxlength="10"><br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender">Male
+        <input type="radio" name="gender">Female<br>
+        <label for="branch" >Branch </label>
+        <select name="m" id="563">
+            <option value="1">CSE</option>
+            <option value="2">ECE</option>
+            <option value="3">CE</option>
+            <option value="4">IT</option>
+        </select><br>
+        <label for="hobby" >Hobbies </label>
+        <input type="checkbox" id="1" name="1" value="1">
+        <label for="1">Dancing</label>
+        <input type="checkbox" id="2" name="2" value="2">
+        <label for="2">Singing</label>
+        <input type="checkbox" id="3" name="3" value="3">
+        <label for="3">Traveling</label><br>
+        <label for="myfile">Upload CV</label>
+        <input type="file" id="myfile" name="myfile" multiple><br><br>
+        <button type="submit" >OK</button>
+        <button type="cancel" >Cancel</button>
+        </div>
+    </form>
+
+    
+</head>
+</html>

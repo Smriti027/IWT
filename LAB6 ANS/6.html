@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with JavaScript Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #dob {
+            margin-top: 20px;
+        }
+        #atmValidity {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form with JavaScript Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required pattern="[A-Za-z\s]+" placeholder="Enter alphabets and spaces only">
+        <span id="nameError" class="error"></span>
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" name="phone" required pattern="[0-9]+" placeholder="Enter numbers only">
+        <span id="phoneError" class="error"></span>
+        <p id="dob">DOB will be displayed here</p>
+        <p id="atmValidity">ATM validity date will be displayed here</p>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function validateForm() {
+            clearErrors();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            if (!isValidName(name)) {
+                showError('nameError', 'Name should contain only alphabets and spaces.');
+                return false;
+            }
+            if (!isValidPhoneNumber(phone)) {
+                showError('phoneError', 'Phone should contain only numbers.');
+                return false;
+            }
+            const dob = generateRandomDate();
+            const atmValidity = generateRandomATMValidity();
+            document.getElementById('dob').textContent = `Date of Birth: ${dob}`;
+            document.getElementById('atmValidity').textContent = `ATM Card Validity: ${atmValidity}`;
+            return false; 
+        }
+        function showError(id, message) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = message;
+        }
+        function clearErrors() {
+            const errorElements = document.querySelectorAll('.error');
+            for (const errorElement of errorElements) {
+                errorElement.textContent = '';
+            }
+        }
+        function isValidName(name) {
+            const nameRegex = /^[A-Za-z\s]+$/;
+            return nameRegex.test(name);
+        }
+        function isValidPhoneNumber(phone) {
+            const phoneRegex = /^[0-9]+$/;
+            return phoneRegex.test(phone);
+        }
+        function generateRandomDate() {
+            const year = Math.floor(Math.random() * 50) + 1950;
+            const month = Math.floor(Math.random() * 12) + 1;
+            const day = Math.floor(Math.random() * 28) + 1;
+            return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+        }
+        function generateRandomATMValidity() {
+            const year = Math.floor(Math.random() * 10) + 2023;
+            const month = Math.floor(Math.random() * 12) + 1;
+            return `${month < 10 ? '0' + month : month}/${year}`;
+        }
+    </script>
+</body>
+</html>

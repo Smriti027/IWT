@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Compare Numbers</title>
+        <script type="text/javascript">
+            var firstNumber,secondNumber,thirdNumber,sum,average,
+            firstNumber = window.prompt("Enter first integer");
+            secondNumber = window.prompt("Enter second integer");
+            thirdNumber = window.prompt("Enter third integer");
+            firstNumber = parseInt(firstNumber);
+            secondNumber = parseInt(secondNumber);
+            thirdNumber = parseInt(thirdNumber);
+            findLargNum(firstNumber,secondNumber,thirdNumber);
+
+            function findLargNum(firstNumber,secondNumber,thirdNumber)
+            {
+                if (firstNumber > secondNumber) 
+                {
+                    if(firstNumber > thirdNumber) window.alert(firstNumber + " is largest");
+                }
+                else if(secondNumber > thirdNumber) window.alert(secondNumber + " is largest");
+                else window.alert(thirdNumber + " is largest");
+		    var sum =  firstNumber + secondNumber + thirdNumber;
+                window.alert("the sum is " + sum); 
+                var average = (firstNumber + secondNumber + thirdNumber) / 3;
+                window.alert("the average is " + average);
+            }
+        </script>
+    </head>
+</html>

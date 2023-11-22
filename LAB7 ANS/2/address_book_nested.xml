@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<AddressBook>
+    <Contact>
+        <FirstName>John</FirstName>
+        <LastName>Doe</LastName>
+        <Email>john.doe@example.com</Email>
+        <PhoneNumbers>
+            <PhoneNumber>Type: Home, Number: (123) 456-7890</PhoneNumber>
+            <PhoneNumber>Type: Work, Number: (987) 654-3210</PhoneNumber>
+        </PhoneNumbers>
+    </Contact>
+    <Contact>
+        <FirstName>Jane</FirstName>
+        <LastName>Smith</LastName>
+        <Email>jane.smith@example.com</Email>
+        <PhoneNumbers>
+            <PhoneNumber>Type: Mobile, Number: (555) 123-4567</PhoneNumber>
+        </PhoneNumbers>
+    </Contact>
+</AddressBook>

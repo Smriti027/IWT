@@ -1,0 +1,7 @@
+<!ELEMENT AddressBook (Contact+)>
+<!ELEMENT Contact (FirstName, LastName, Email, PhoneNumbers)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT PhoneNumbers (PhoneNumber+)>
+<!ELEMENT PhoneNumber (#PCDATA)>

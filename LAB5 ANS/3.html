@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    
+    <label for="marks">Enter student marks (comma-separated):</label>
+    <input type="text" id="marks" placeholder="e.g., 85, 92, 78, 88, 95">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    
+    <p>Average Marks: <span id="average"></span></p>
+    <p>Grade: <span id="grade"></span></p>
+
+    <script>
+        function calculateAverage(marks) {
+            const marksArray = marks.split(",").map(mark => parseInt(mark.trim()));
+            if (marksArray.length === 0) {
+                return 0;
+            }
+            const sum = marksArray.reduce((total, mark) => total + mark, 0);
+            return sum / marksArray.length;
+        }
+
+        function determineGrade(average) {
+            if (average >= 90) {
+                return 'A';
+            } else if (average >= 80) {
+                return 'B';
+            } else if (average >= 70) {
+                return 'C';
+            } else if (average >= 60) {
+                return 'D';
+            } else {
+                return 'F';
+            }
+        }
+
+        function calculateGrade() {
+            const marksInput = document.getElementById("marks");
+            const averageDisplay = document.getElementById("average");
+            const gradeDisplay = document.getElementById("grade");
+
+            const marks = marksInput.value;
+            const averageMarks = calculateAverage(marks);
+            const grade = determineGrade(averageMarks);
+
+            averageDisplay.textContent = averageMarks.toFixed(2);
+            gradeDisplay.textContent = grade;
+        }
+    </script>
+</body>
+</html>
