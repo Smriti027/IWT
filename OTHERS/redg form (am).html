@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Job Registration Form</title>
+<style>
+body{
+background-color: #b9b2b0;
+}
+</style>
+</head>
+<body>
+<h1>Job Registration Form</h1>
+<form id="formal">
+<label> Full Name: </label>
+<input type="text" name="fullname" maxlength="30" required> <br><br>
+<label> Email: </label>
+<input type="text" name="email" placeholder="abc@example.com" required> <br><br>
+<label> Phone: </label>
+<input type="text" name="countrycode" value="+91" size="2" required>
+<input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required> <br><br>
+<label> Date of Birth: </label>
+<input type="date" name="dob" required> <br><br>
+<label> Gender: </label>
+<input type="radio" name="male"/>Male
+<input type="radio" name="male"/>female
+<input type="radio" name="male"/>other <br><br>
+<label> Password: </label>
+<input type="password" id="pass" name="pass" maxlength="10"> <br>
+<br><br>
+<label> Re-enter Password: </label>
+<input type="password" id="repass"name="repass" maxlength="10"> <br><br>
+
+<label> Degree: </label>
+<select name="branch">Degree:
+<option value="B-TECH">B-tech</option>
+<option value="M-TECH">M-tech</option>
+<option value="MCA">MCA</option>
+</select> <br><br>
+<label> Branch: </label>
+<select name="branch">Branch:
+<option value="cse">CSE</option>
+<option value="ece">ECE</option>
+<option value="it">IT</option>
+</select> <br><br>
+<label> Skills: </label>
+<input type="checkbox" name="C"/>C
+<input type="checkbox" name="C++"/>C++
+<input type="checkbox" name="JAVA"/>JAVA
+<input type="checkbox" name="Python"/>Python
+<input type="checkbox" name="Go"/>Go
+<input type="checkbox" name="Rust"/>Rust
+<input type="checkbox" name="Javascript"/>Javascript
+<input type="checkbox" name="SQL"/>SQL <br><br>
+<label> Job Type: </label>
+<input type="radio" name="se"/>Full Stack
+<input type="radio" name="se"/>Front-end
+<input type="radio" name="se"/>Backend
+<input type="radio" name="se"/>Projec Manager <br><br>
+<label> Upload Resume: </label>
+<input type="file" name="file"/><br><br>
+<label>Address: </label>
+<textarea cols="80"rows="5"value="addres" required>
+</textarea> <br><br>
+</form>
+<button type="submit form="formal" value="Submit">Submit </button>
+</body>

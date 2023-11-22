@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mail SYSTEM "mail.dtd" >
+<Mail>
+<To>marendra.nayak0231@gmail.com</To>
+<CC> toamarendranayak@gmail.com</CC>
+<CC> anb020@nist.edu</CC>
+<BCC> bcc@gmail.com</BCC>
+<SUBJECT>     1. All students have to write record on A4 size plane paper only.
+    2. The assignment must be hand written, system generated text or image is not allowed.
+    3. After writing the assignment, student has to scan it upload the hand written copy in the given Lab Assignment.
+    4. In the record, each page must contain Student Name, Full Roll Assignment Number at top-right corner.
+    5. In each record student has to write question  its corresponding answer.
+    6. All the diagrams must be neat and clear, it must be done using pen only.
+    7. The student has to submit the record with in the due time only.
+    8. No extra lab sessions will be provided under any circumstances.
+ </SUBJECT>
+</Mail>
+
+
+
+
+<!ELEMENT Mail (To,CC*,bcc*,Subject?)>
+<!ELEMENT To (#PCDATA)>
+<!ELEMENT CC (#PCDATA)>
+<!ELEMENT BCC (#PCDATA)>
+<!ELEMENT SUBJECT (#PCDATA)>
